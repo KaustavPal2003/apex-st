@@ -1,0 +1,11 @@
+{
+  "symbol": "ULTRACEMCO",
+  "mu0": -5584.026476300629,
+  "sigma0": 939.1381155703359,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 40.34081801573775,
+  "max_s_neg_insample": 15.206776242807312,
+  "insample_drift_flags": 210,
+  "n_insample": 358
+}

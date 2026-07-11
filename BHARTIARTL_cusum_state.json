@@ -1,0 +1,11 @@
+{
+  "symbol": "BHARTIARTL",
+  "mu0": -1357.1147743949678,
+  "sigma0": 147.7161082432831,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 74.04336934406126,
+  "max_s_neg_insample": 66.4898727094797,
+  "insample_drift_flags": 338,
+  "n_insample": 358
+}

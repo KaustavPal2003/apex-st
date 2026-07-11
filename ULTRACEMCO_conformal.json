@@ -1,0 +1,8 @@
+{
+  "symbol": "ULTRACEMCO",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 5406.761538713338,
+  "empirical_coverage": 0.40782122905027934,
+  "n_calibration": 358
+}

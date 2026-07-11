@@ -1,0 +1,11 @@
+{
+  "symbol": "LT",
+  "mu0": -2622.210654487823,
+  "sigma0": 321.2324410222814,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 61.37557597539067,
+  "max_s_neg_insample": 73.04795472428911,
+  "insample_drift_flags": 333,
+  "n_insample": 358
+}

@@ -1,0 +1,8 @@
+{
+  "symbol": "AXISBANK",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.021816141922310524,
+  "empirical_coverage": 0.8784810126582279,
+  "n_calibration": 394
+}

@@ -1,0 +1,8 @@
+{
+  "symbol": "CIPLA",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.021946273195713305,
+  "empirical_coverage": 0.8936708860759494,
+  "n_calibration": 394
+}

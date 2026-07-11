@@ -1,0 +1,8 @@
+{
+  "symbol": "BAJFINANCE",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.023670776052220822,
+  "empirical_coverage": 0.8582278481012658,
+  "n_calibration": 394
+}

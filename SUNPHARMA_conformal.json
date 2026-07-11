@@ -1,0 +1,8 @@
+{
+  "symbol": "SUNPHARMA",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.018651601617333247,
+  "empirical_coverage": 0.8632911392405064,
+  "n_calibration": 394
+}

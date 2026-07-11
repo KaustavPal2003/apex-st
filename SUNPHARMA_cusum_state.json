@@ -1,0 +1,11 @@
+{
+  "symbol": "SUNPHARMA",
+  "mu0": 0.0006013505353851692,
+  "sigma0": 0.012995603667375562,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 4.100434246049667,
+  "max_s_neg_insample": 6.42746939818866,
+  "insample_drift_flags": 9,
+  "n_insample": 395
+}

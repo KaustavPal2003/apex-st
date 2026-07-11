@@ -1,0 +1,8 @@
+{
+  "symbol": "ADANIENT",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.035162651391350074,
+  "empirical_coverage": 0.8962025316455696,
+  "n_calibration": 394
+}

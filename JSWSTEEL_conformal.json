@@ -1,0 +1,8 @@
+{
+  "symbol": "JSWSTEEL",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.02514803212612634,
+  "empirical_coverage": 0.8981723237597912,
+  "n_calibration": 383
+}

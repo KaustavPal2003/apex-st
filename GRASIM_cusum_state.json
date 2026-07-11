@@ -1,0 +1,11 @@
+{
+  "symbol": "GRASIM",
+  "mu0": 0.001589573402655137,
+  "sigma0": 0.014157094726350067,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 4.754156945408033,
+  "max_s_neg_insample": 3.939601159666429,
+  "insample_drift_flags": 0,
+  "n_insample": 395
+}

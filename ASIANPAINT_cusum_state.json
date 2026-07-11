@@ -1,0 +1,11 @@
+{
+  "symbol": "ASIANPAINT",
+  "mu0": 0.0002265000259991846,
+  "sigma0": 0.014044851147773686,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 7.419369207484343,
+  "max_s_neg_insample": 7.44854998719198,
+  "insample_drift_flags": 14,
+  "n_insample": 395
+}

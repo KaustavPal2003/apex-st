@@ -1,0 +1,11 @@
+{
+  "symbol": "TITAN",
+  "mu0": -0.0009101167860454909,
+  "sigma0": 0.014678117988450949,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 6.077517650544412,
+  "max_s_neg_insample": 6.221854781533535,
+  "insample_drift_flags": 4,
+  "n_insample": 395
+}

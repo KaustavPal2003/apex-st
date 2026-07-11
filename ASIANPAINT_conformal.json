@@ -1,0 +1,8 @@
+{
+  "symbol": "ASIANPAINT",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 0.017827708775243784,
+  "empirical_coverage": 0.8278481012658228,
+  "n_calibration": 394
+}

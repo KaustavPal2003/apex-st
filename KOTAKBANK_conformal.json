@@ -1,0 +1,8 @@
+{
+  "symbol": "KOTAKBANK",
+  "alpha": 0.1,
+  "nominal_coverage": 0.9,
+  "half_width": 25.555684009743807,
+  "empirical_coverage": 0.3994413407821229,
+  "n_calibration": 358
+}

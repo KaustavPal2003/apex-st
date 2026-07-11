@@ -1,0 +1,11 @@
+{
+  "symbol": "KOTAKBANK",
+  "mu0": -32.13126889021037,
+  "sigma0": 18.16475819759859,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 48.01786915346646,
+  "max_s_neg_insample": 39.2263517806641,
+  "insample_drift_flags": 272,
+  "n_insample": 358
+}

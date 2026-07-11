@@ -1,0 +1,11 @@
+{
+  "symbol": "EICHERMOT",
+  "mu0": 2.3825450496795246e-05,
+  "sigma0": 0.01673526371380273,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 7.37359854058636,
+  "max_s_neg_insample": 5.262616979214218,
+  "insample_drift_flags": 8,
+  "n_insample": 395
+}
