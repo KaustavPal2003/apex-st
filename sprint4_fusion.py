@@ -714,10 +714,17 @@ def process_symbol(symbol: str, all_results: list):
         print(f"    {split:>5}: price={pe.shape}  sent={splits_data[split][1].shape}  "
               f"gat={splits_data[split][2].shape}")
 
-    # Build datasets
+    # Build datasets — re-align all modalities to shortest array length
+    # GAT embeddings may have slightly different row count than Sprint 1/2
+    # arrays depending on walk-forward split boundary arithmetic.
     def make_ds(split):
         _, sent, gat, yr, yc = splits_data[split]
-        return make_dataset(price_embs[split], sent, gat, yr, yc)
+        pe = price_embs[split]
+        n  = min(len(pe), len(sent), len(gat), len(yr), len(yc))
+        if n < len(pe):
+            print(f"    ⚠  {split}: aligning lengths → "
+                  f"price={len(pe)} sent={len(sent)} gat={len(gat)} → trimmed to {n}")
+        return make_dataset(pe[:n], sent[:n], gat[:n], yr[:n], yc[:n])
 
     train_ds = make_ds('train')
     val_ds   = make_ds('val')

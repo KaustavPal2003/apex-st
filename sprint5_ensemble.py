@@ -206,6 +206,15 @@ def load_fusion_model(symbol: str, variant: str):
 
 def get_fusion_predictions(model, price_emb, sent, gat):
     """Run a frozen fusion model, return (reg_pred, cls_prob)."""
+    # Align all three modalities to the shortest array before stacking.
+    # GAT embeddings may have a slightly different row count than Sprint 1/2
+    # arrays due to walk-forward split boundary arithmetic differences.
+    n = min(len(price_emb), len(sent), len(gat))
+    if n < max(len(price_emb), len(sent), len(gat)):
+        print(f"    ⚠  Aligning modalities: price={len(price_emb)} "
+              f"sent={len(sent)} gat={len(gat)} → trimmed to {n}")
+    price_emb, sent, gat = price_emb[:n], sent[:n], gat[:n]
+
     with torch.no_grad():
         p = torch.tensor(price_emb, dtype=torch.float32).to(DEVICE)
         s = torch.tensor(sent,      dtype=torch.float32).to(DEVICE)
@@ -268,6 +277,13 @@ def build_meta_features(symbol: str, split: str, price_model, available_variants
 
     cols += [reg_mean, reg_std, cls_mean, agreement]
     meta_X = np.stack(cols, axis=1).astype(np.float32)
+
+    # Trim y_reg and y_cls to match meta_X row count.
+    # get_fusion_predictions() may have trimmed to a shorter length
+    # (min of price/sent/gat) than the original y_reg/y_cls length.
+    n_out = len(meta_X)
+    y_reg = y_reg[:n_out]
+    y_cls = y_cls[:n_out]
 
     return meta_X, y_reg, y_cls
 
