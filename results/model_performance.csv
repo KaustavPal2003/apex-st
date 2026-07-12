@@ -1,0 +1,21 @@
+Symbol,Dir Acc %,RMSE,Corr,Calibration Status,Empirical Coverage
+ADANIENT,47.09,0.0258,-0.001,check calibration,88.9
+ADANIPORTS,48.86,0.0197,0.033,check calibration,90.6
+APOLLOHOSP,53.67,0.013,0.021,check calibration,93.7
+ASIANPAINT,47.85,0.014,0.084,check calibration,82.8
+AXISBANK,50.13,0.0146,0.036,check calibration,87.8
+BAJAJ-AUTO,50.38,0.0149,0.063,check calibration,89.4
+BAJFINANCE,51.14,0.0177,0.118,check calibration,86.6
+BHARTIARTL,48.86,0.0132,-0.075,check calibration,89.1
+CIPLA,49.62,0.0134,0.065,check calibration,89.4
+DIVISLAB,50.89,0.0158,0.021,check calibration,89.1
+EICHERMOT,51.39,0.0167,0.0,check calibration,89.1
+GRASIM,49.11,0.0141,0.056,check calibration,88.9
+ICICIBANK,46.33,0.0116,-0.055,check calibration,89.6
+INDUSINDBK,50.65,0.025,-0.05,check calibration,81.5
+JSWSTEEL,50.13,0.0156,-0.017,check calibration,89.6
+LT,47.59,0.016,0.03,check calibration,88.9
+NESTLEIND,49.09,0.0125,0.082,check calibration,91.1
+SUNPHARMA,51.9,0.013,-0.033,check calibration,86.1
+TATASTEEL,45.43,0.018,-0.051,check calibration,87.7
+TITAN,49.62,0.0146,-0.073,check calibration,90.4

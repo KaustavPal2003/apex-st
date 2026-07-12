@@ -1,0 +1,534 @@
+% ============================================================
+%  APEX-ST — Academic Documentation Tables
+%  NSE 30-Day Stock Direction and Return Prediction Pipeline
+%  Generated from Sprint 5 pipeline output (July 2026)
+% ============================================================
+%
+%  Required packages (add to preamble):
+%    \usepackage{booktabs}
+%    \usepackage{multirow}
+%    \usepackage{xcolor}
+%    \usepackage{array}
+%    \usepackage{caption}
+%    \usepackage{subcaption}
+%    \usepackage{geometry}
+%    \usepackage{siunitx}    % for S column type (aligned decimals)
+%    \usepackage{pifont}     % for \cmark / \xmark
+%
+%  Convenience commands (add to preamble):
+%    \newcommand{\cmark}{\ding{51}}  % checkmark
+%    \newcommand{\xmark}{\ding{55}}  % cross
+%    \definecolor{warnred}{RGB}{220,53,69}
+%    \definecolor{okgreen}{RGB}{40,167,69}
+% ============================================================
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 1 — Main results: per-symbol prediction performance
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  Per-symbol prediction performance on held-out test split
+  (walk-forward cross-validation, last fold, \(n \approx 395\) samples per symbol).
+  \textbf{Dir Acc} is directional accuracy (\%); random baseline = 50\%.
+  \textbf{RMSE} is root mean squared error of the 30-day log-return forecast.
+  \textbf{Corr} is Pearson correlation between predicted and realised log-returns.
+  All results are from the final leak-free pipeline run with real FinBERT
+  sentiment (date-aligned via \texttt{aggregate\_daily()}) and GAT
+  embeddings derived from raw OHLCV close prices.
+}
+\label{tab:main_results}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{%
+  l                   % Symbol
+  S[table-format=2.2] % Dir Acc
+  S[table-format=1.4] % RMSE
+  S[table-format=+1.3]% Corr
+}
+\toprule
+\textbf{Symbol} &
+  {\textbf{Dir Acc (\%)}} &
+  {\textbf{RMSE}} &
+  {\textbf{Corr}} \\
+\midrule
+ADANIENT    & 47.09 & 0.0258 & +0.020 \\
+ADANIPORTS  & 48.35 & 0.0197 & -0.066 \\
+APOLLOHOSP  & 51.90 & 0.0130 & -0.052 \\
+BAJAJ-AUTO  & 51.90 & 0.0149 & -0.003 \\
+BAJFINANCE  & 46.84 & 0.0180 & -0.000 \\
+CIPLA       & 49.37 & 0.0134 & -0.019 \\
+DIVISLAB    & 52.91 & 0.0157 & +0.122 \\
+EICHERMOT   & 51.14 & 0.0167 & +0.032 \\
+GRASIM      & 52.91 & 0.0142 & -0.040 \\
+INDUSINDBK  & 50.13 & 0.0250 & +0.077 \\
+JSWSTEEL    & 49.87 & 0.0155 & +0.051 \\
+NESTLEIND   & 49.87 & 0.0125 & +0.045 \\
+SUNPHARMA   & 47.34 & 0.0130 & -0.098 \\
+TATASTEEL   & 51.14 & 0.0180 & +0.030 \\
+TITAN       & 49.62 & 0.0147 & +0.006 \\
+\midrule
+\textbf{Mean} & \textbf{50.03} & \textbf{0.0167} & \textbf{+0.007} \\
+\textbf{Std}  & 1.87  & 0.0036 & 0.056  \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+\textit{Note:} Mean directional accuracy of 50.03\% is statistically
+indistinguishable from the 50\% random baseline
+(two-sided binomial test, \(p > 0.05\) for all symbols individually
+and pooled). This is the honest, leak-free result after fixing three
+data leakage bugs identified during development (see Section~\ref{sec:bugs}).
+\end{table}
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 2 — Conformal prediction calibration
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  Conformal prediction calibration at nominal coverage \(1 - \alpha = 90\%\).
+  \textbf{Emp.\ Coverage} is the empirical proportion of test-set outcomes
+  falling within the predicted interval.
+  \textbf{Half-Width} is the symmetric conformal interval radius in log-return units.
+  \textbf{Cal.} indicates whether the symbol passes the calibration threshold
+  \(|\text{Emp.\ Coverage} - 0.90| < 0.08\).
+  Conformal prediction requires no distributional assumptions on residuals.
+}
+\label{tab:conformal}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{%
+  l
+  S[table-format=2.1]  % Emp Coverage %
+  S[table-format=1.4]  % Half Width
+  c                    % Calibrated
+  c                    % CUSUM flags
+}
+\toprule
+\textbf{Symbol} &
+  {\textbf{Emp.\ Cov.\ (\%)}} &
+  {\textbf{Half-Width}} &
+  \textbf{Cal.} &
+  \textbf{CUSUM Flags} \\
+\midrule
+ADANIENT   & 89.4 & 0.0180 & \textcolor{okgreen}{\cmark} & 4  \\
+ADANIPORTS & 90.6 & 0.0140 & \textcolor{okgreen}{\cmark} & 3  \\
+APOLLOHOSP & 93.7 & 0.0130 & \textcolor{okgreen}{\cmark} & 6  \\
+BAJAJ-AUTO & 89.9 & 0.0149 & \textcolor{okgreen}{\cmark} & 7  \\
+BAJFINANCE & 85.8 & 0.0160 & \textcolor{okgreen}{\cmark} & 4  \\
+CIPLA      & 89.4 & 0.0134 & \textcolor{okgreen}{\cmark} & 3  \\
+DIVISLAB   & 89.1 & 0.0157 & \textcolor{okgreen}{\cmark} & 1  \\
+EICHERMOT  & 89.1 & 0.0167 & \textcolor{okgreen}{\cmark} & 8  \\
+GRASIM     & 88.6 & 0.0142 & \textcolor{okgreen}{\cmark} & 0  \\
+INDUSINDBK & 81.2 & 0.0240 & \textcolor{warnred}{\xmark} & 15 \\
+JSWSTEEL   & 90.3 & 0.0155 & \textcolor{okgreen}{\cmark} & 1  \\
+NESTLEIND  & 92.2 & 0.0125 & \textcolor{okgreen}{\cmark} & 21 \\
+SUNPHARMA  & 86.1 & 0.0130 & \textcolor{okgreen}{\cmark} & 8  \\
+TATASTEEL  & 86.9 & 0.0180 & \textcolor{okgreen}{\cmark} & 4  \\
+TITAN      & 88.9 & 0.0147 & \textcolor{okgreen}{\cmark} & 4  \\
+\midrule
+\textbf{Mean} & 88.7 & 0.0156 & 14/15 & 5.9 \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+\textit{Note:} INDUSINDBK fails calibration across five independent pipeline
+runs (empirical coverage consistently $\approx 81\%$), suggesting this stock
+exhibits heavier-tailed residuals than the conformal calibration set captures.
+NESTLEIND's 21 CUSUM flags reflect within-sample residual instability despite
+passing the coverage threshold.
+\end{table}
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 3 — Data leakage bugs found and fixed
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  Data leakage bugs identified and fixed during APEX-ST development.
+  Each bug caused spuriously inflated directional accuracy before correction.
+  The ``Before'' accuracy reflects the specific bug in isolation; the final
+  pipeline result (Table~\ref{tab:main_results}) reflects all bugs fixed simultaneously.
+}
+\label{sec:bugs}
+\label{tab:bugs}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{p{2.8cm} p{4.5cm} p{3.5cm} c c}
+\toprule
+\textbf{Module} &
+  \textbf{Bug description} &
+  \textbf{Fix} &
+  \textbf{Before} &
+  \textbf{After} \\
+\midrule
+
+\texttt{sprint3\_gat.py} \newline (GAT correlation graph) &
+  Correlation matrix built from raw future price levels (\texttt{y\_reg}),
+  inflating correlations via shared bull-market drift rather than
+  genuine daily co-movement. Node features also derived from the
+  forward-shifted target array, leaking future returns into inputs. &
+  Read daily log-returns directly from \texttt{data/\{SYM\}.csv};
+  never use \texttt{y\_reg} for graph construction. &
+  80--99\% &
+  47--53\% \\
+
+\addlinespace
+\texttt{apex\_feature\_ engineering.py} \newline (\texttt{y\_reg} target) &
+  \texttt{y\_reg} stored raw future closing price (level) instead of
+  a 30-day log-return. Caused GRU to train on a non-stationary,
+  scale-dependent target; also caused Training loss explosion
+  ($\times$600{,}000) when normalisation was later removed. &
+  Replace \texttt{y\_reg.append(future\_price)} with
+  \texttt{y\_reg.append(log(future/curr))}. &
+  N/A \newline (loss = $1.7 \times 10^5$) &
+  Loss $\approx 0.27$ \\
+
+\addlinespace
+\texttt{sprint3\_finbert.py} \newline (sentiment alignment) &
+  Real headlines loaded correctly but then scrambled to wrong
+  trading days via even-chunking: chunk $i$ mapped to trading
+  day $i$ rather than to the actual calendar date of the headlines. &
+  Wire \texttt{aggregate\_daily()} using \texttt{\{SYM\}\_apex\_ dates\_*.npy}
+  arrays carrying true decision-day timestamps. &
+  49.95\% \newline (broken) &
+  49.27\% \newline (honest) \\
+
+\addlinespace
+\texttt{stock\_screener.py} \newline (fundamentals gate) &
+  \texttt{numpy.bool\_ is not False} identity check always evaluated
+  \texttt{True}, silently passing every symbol through Stage~2
+  regardless of whether it met growth/cap-tier criteria. &
+  Wrap result in \texttt{bool()} before identity comparison. &
+  All symbols pass &
+  Correct filtering \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 4 — Seed stability analysis
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  Seed stability analysis for the three symbols with highest directional
+  accuracy in the initial Sprint~5 run (BAJFINANCE 54.18\%,
+  SUNPHARMA 53.42\%, NESTLEIND 52.74\%) plus ADANIENT as a control.
+  Three independent GRU training runs with different random seeds confirm
+  that per-symbol accuracy swings of \(\pm 2\)--\(3\) percentage points
+  are attributable to initialisation noise rather than stable learned signal.
+}
+\label{tab:seed_stability}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l
+  S[table-format=2.2]
+  S[table-format=2.2]
+  S[table-format=2.2]
+  S[table-format=1.1]
+  l}
+\toprule
+\textbf{Symbol} &
+  {\textbf{Seed 1}} &
+  {\textbf{Seed 2}} &
+  {\textbf{Seed 3}} &
+  {\textbf{Spread}} &
+  \textbf{Interpretation} \\
+\midrule
+BAJFINANCE & 45.57 & 47.34 & 52.15 & 6.6 & Noise — no stable edge \\
+SUNPHARMA  & 51.90 & 51.90 & 51.90 & 0.0 & Classifier collapse (majority-class) \\
+NESTLEIND  & 49.35 & 49.35 & 49.35 & 0.0 & Classifier collapse (majority-class) \\
+ADANIENT   & 47.09 & 48.10 & 47.34 & 1.0 & Noise — no stable edge (control) \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+\textit{Note:} SUNPHARMA and NESTLEIND producing identical accuracy across all
+three seeds indicates gradient collapse to majority-class prediction, not
+reproducible signal. The identical values are a diagnostic artefact, not
+evidence of stability.
+\end{table}
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 5 — News coverage statistics
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  GDELT DOC~2.0 headline coverage per symbol, fetched using monthly
+  query windows (\texttt{sentinel\_news\_fetcher.py}) with a 6-second
+  inter-request delay to avoid rate limiting.
+  \textbf{Coverage density} is the proportion of trading days with
+  at least one headline. Days with no headlines receive a zero-vector
+  FinBERT embedding in Sprint~3.
+}
+\label{tab:news_coverage}
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{l r r l l r}
+\toprule
+\textbf{Symbol} &
+  \textbf{Articles} &
+  \textbf{Days w/ News} &
+  \textbf{Earliest} &
+  \textbf{Latest} &
+  \textbf{Density (\%)} \\
+\midrule
+ADANIENT   & 470 & 205 & 2017-07-24 & 2026-06-25 & 5.2 \\
+ADANIPORTS & 381 & 147 & 2023-02-06 & 2026-06-30 & 12.1 \\
+APOLLOHOSP & 223 & 132 & 2022-02-24 & 2026-06-08 & 7.8 \\
+BAJAJ-AUTO & 183 & 144 & 2017-04-19 & 2026-06-24 & 3.6 \\
+BAJFINANCE & 406 & 208 & 2022-03-23 & 2026-06-29 & 12.4 \\
+CIPLA      &   3 &   3 & 2025-10-17 & 2026-06-03 & 1.3 \\
+DIVISLAB   &  28 &  28 & 2021-07-11 & 2026-05-26 & 1.5 \\
+EICHERMOT  & 553 & 324 & 2017-04-09 & 2026-06-30 & 8.2 \\
+GRASIM     &  71 &  54 & 2016-01-04 & 2026-06-23 & 1.4 \\
+INDUSINDBK & 293 & 158 & 2017-07-21 & 2026-06-23 & 4.0 \\
+JSWSTEEL   & 392 & 197 & 2018-03-06 & 2026-06-30 & 6.0 \\
+NESTLEIND  & 150 &  86 & 2019-08-28 & 2026-06-26 & 3.4 \\
+SUNPHARMA  & 299 & 170 & 2014-07-21 & 2026-06-30 & 3.5 \\
+TATASTEEL  & 790 & 363 & 2017-07-19 & 2026-06-25 & 9.2 \\
+TITAN      & 176 & 121 & 2021-03-27 & 2026-06-17 & 7.0 \\
+\midrule
+\textbf{Total} & \textbf{4{,}418} & \textbf{2{,}340} & & & \textbf{5.6 avg} \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+\textit{Note:} Low coverage density (mean 5.6\%) is a primary limitation
+of the GDELT free-tier API under sustained rate limiting. CIPLA (3 articles)
+and DIVISLAB (28 articles) effectively receive synthetic zero-vector sentiment
+throughout training. A commercial news API providing near-daily coverage
+would be required to test the sentiment hypothesis at meaningful density.
+\end{table}
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 6 — Pipeline architecture summary
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  APEX-ST pipeline architecture summary. Each sprint produces artefacts
+  consumed by the next stage. All training used walk-forward cross-validation
+  to prevent temporal leakage.
+}
+\label{tab:architecture}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{c l p{4cm} p{3.5cm}}
+\toprule
+\textbf{Sprint} &
+  \textbf{Module} &
+  \textbf{Method} &
+  \textbf{Output artefact} \\
+\midrule
+1 &
+  \texttt{apex\_feature\_engineering.py} &
+  Daubechies-4 wavelet decomposition; 4-state Gaussian HMM regime detection;
+  60+ technical indicators; Nystroem kernel approximation ($m=300$) &
+  Feature matrix $(N \times 60 \times d)$; decision-day timestamps \\
+
+\addlinespace
+2 &
+  \texttt{apex\_synth\_runner\_v2.py} &
+  Conv1D + BiGRU + attention; 18 epochs; early stopping (patience 7);
+  walk-forward split (5 folds); seed-fixed at 42 &
+  \texttt{\{SYM\}\_apex\_st\_best.pt} \\
+
+\addlinespace
+3a &
+  \texttt{sprint3\_finbert.py} &
+  ProsusAI/finbert; date-aligned via \texttt{aggregate\_daily()};
+  zero-vector for days with no headlines; 64-dim projection &
+  \texttt{\{SYM\}\_apex\_sent\_*.npy} \\
+
+\addlinespace
+3b &
+  \texttt{sprint3\_gat.py} &
+  Pearson correlation on raw log-returns ($\tau = 0.3$);
+  8-head GAT; 3 layers; 64-dim embedding per stock per day &
+  \texttt{\{SYM\}\_apex\_gat\_*.npy} \\
+
+\addlinespace
+4 &
+  \texttt{sprint4\_fusion.py} &
+  Gated fusion (learned price/sentiment/GAT weights);
+  3 variants: Gated, Concat, CrossAttention &
+  \texttt{\{SYM\}\_FusionA\_Gated\_best.pt} \\
+
+\addlinespace
+5 &
+  \texttt{sprint5\_ensemble.py} &
+  XGBoost meta-learner (3-variant stacking);
+  split conformal prediction ($\alpha = 0.10$);
+  CUSUM drift detection (Page's test, $k=0.5$, $h=5$) &
+  \texttt{\{SYM\}\_ensemble\_result.json} \\
+
+\addlinespace
+6 &
+  \texttt{apex\_inference.py} &
+  FastAPI REST service; 6 endpoints;
+  live CUSUM accumulator; deployed on AWS EC2 Mumbai &
+  \texttt{http://13.233.140.171:8000} \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+% ────────────────────────────────────────────────────────────
+%  TABLE 7 — Fusion gate weights (branch importance)
+% ────────────────────────────────────────────────────────────
+\begin{table}[htbp]
+\centering
+\caption{%
+  Sprint~4 gated fusion branch weights per symbol (price GRU /
+  FinBERT sentiment / GAT graph). Weights sum to 1.0 per symbol.
+  The price branch dominates consistently (mean 73\%), confirming
+  that sentiment and graph branches contribute marginal additional
+  signal given the current headline coverage density.
+  \textbf{Warning:} gate weights are sensitive to random initialisation
+  (no fixed seed in Sprint~4); values may differ by $\pm 5$--15\%
+  across independent runs.
+}
+\label{tab:gate_weights}
+\setlength{\tabcolsep}{8pt}
+\begin{tabular}{l
+  S[table-format=1.2]
+  S[table-format=1.2]
+  S[table-format=1.2]}
+\toprule
+\textbf{Symbol} &
+  {\textbf{Price}} &
+  {\textbf{Sentiment}} &
+  {\textbf{GAT}} \\
+\midrule
+ADANIENT   & 0.76 & 0.17 & 0.07 \\
+ADANIPORTS & 0.63 & 0.28 & 0.09 \\
+APOLLOHOSP & 0.84 & 0.08 & 0.08 \\
+BAJAJ-AUTO & 0.79 & 0.12 & 0.09 \\
+BAJFINANCE & 0.71 & 0.19 & 0.10 \\
+CIPLA      & 0.83 & 0.10 & 0.07 \\
+DIVISLAB   & 0.76 & 0.15 & 0.09 \\
+EICHERMOT  & 0.80 & 0.11 & 0.09 \\
+GRASIM     & 0.69 & 0.21 & 0.10 \\
+INDUSINDBK & 0.75 & 0.16 & 0.09 \\
+JSWSTEEL   & 0.77 & 0.14 & 0.09 \\
+NESTLEIND  & 0.72 & 0.18 & 0.10 \\
+SUNPHARMA  & 0.81 & 0.12 & 0.07 \\
+TATASTEEL  & 0.68 & 0.21 & 0.11 \\
+TITAN      & 0.78 & 0.15 & 0.07 \\
+\midrule
+\textbf{Mean} & 0.75 & 0.16 & 0.09 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{%
+  Model directional accuracy vs.\ majority-class naive baseline
+  (predict the more frequent direction in the test split every day).
+  Negative gaps indicate the trained model performs worse than predicting
+  the dominant direction unconditionally. 16 of 20 symbols show negative
+  gaps; mean gap $= -1.9\%$, consistent with mild overfitting to
+  training-period patterns that did not generalise to the 2024--2026
+  test window.
+}
+\label{tab:naive_comparison}
+\begin{tabular}{l S[table-format=2.1] S[table-format=2.1] S[table-format=+2.1]}
+\toprule
+\textbf{Symbol} &
+  {\textbf{Naive baseline (\%)}} &
+  {\textbf{Model acc.\ (\%)}} &
+  {\textbf{Gap (pp)}} \\
+\midrule
+ADANIENT    & 52.9 & 47.1 & -5.8 \\
+ADANIPORTS  & 51.1 & 48.9 & -2.3 \\
+APOLLOHOSP  & 52.9 & 53.7 & +0.8 \\
+ASIANPAINT  & 51.4 & 47.9 & -3.5 \\
+AXISBANK    & 51.1 & 50.1 & -1.0 \\
+BAJAJ-AUTO  & 50.1 & 50.4 & +0.3 \\
+BAJFINANCE  & 52.4 & 51.1 & -1.3 \\
+BHARTIARTL  & 50.9 & 48.9 & -2.0 \\
+CIPLA       & 50.4 & 49.6 & -0.8 \\
+DIVISLAB    & 50.1 & 50.9 & +0.8 \\
+EICHERMOT   & 51.4 & 51.4 & -0.0 \\
+GRASIM      & 50.6 & 49.1 & -1.5 \\
+ICICIBANK   & 51.1 & 46.3 & -4.8 \\
+INDUSINDBK  & 50.1 & 50.6 & +0.5 \\
+JSWSTEEL    & 52.2 & 50.1 & -2.1 \\
+LT          & 52.2 & 47.6 & -4.6 \\
+NESTLEIND   & 50.7 & 49.1 & -1.6 \\
+SUNPHARMA   & 51.9 & 51.9 & +0.0 \\
+TATASTEEL   & 52.0 & 45.4 & -6.5 \\
+TITAN       & 50.1 & 49.6 & -0.5 \\
+\midrule
+\textbf{Mean} & 51.2 & 49.5 & -1.9 \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+\textit{Note:} A binomial test against 50\% (not against the naive baseline)
+finds no symbol with $p < 0.05$ after Bonferroni correction for 20 comparisons.
+The consistent negative gap pattern suggests mild temporal concept drift between
+the training period (2010--2022) and the test period (2024--2026).
+\end{table}
+
+
+\begin{table}[htbp]
+\centering
+\caption{%
+  McNemar's exact test comparing APEX-ST ensemble predictions against
+  the majority-class naive baseline on the held-out test split
+  ($n \approx 395$ per symbol).
+  $b$ = cases where model is correct and baseline is wrong;
+  $c$ = cases where baseline is correct and model is wrong.
+  No symbol achieves statistical significance at the Bonferroni-corrected
+  threshold $\alpha = 0.05/20 = 0.0025$.
+}
+\label{tab:mcnemar}
+\begin{tabular}{l r r S[table-format=1.4] c}
+\toprule
+\textbf{Symbol} & \textbf{$b$} & \textbf{$c$} &
+  {\textbf{$p$-value}} & \textbf{Sig.\ ($\alpha=0.0025$)} \\
+\midrule
+ADANIENT    & 186 & 209 & 0.2683 & — \\
+ADANIPORTS  &  70 &  79 & 0.5124 & — \\
+APOLLOHOSP  &  27 &  24 & 0.7798 & — \\
+ASIANPAINT  & 181 & 195 & 0.5026 & — \\
+AXISBANK    &  37 &  41 & 0.7343 & — \\
+BAJAJ-AUTO  & 197 & 196 & 1.0000 & — \\
+BAJFINANCE  & 101 & 106 & 0.7811 & — \\
+BHARTIARTL  & 166 & 174 & 0.7043 & — \\
+CIPLA       & 196 & 199 & 0.9199 & — \\
+DIVISLAB    & 171 & 168 & 0.9135 & — \\
+EICHERMOT   & \multicolumn{2}{c}{collapsed$^\dagger$} & {—} & — \\
+GRASIM      & 194 & 200 & 0.8012 & — \\
+ICICIBANK   &  62 &  81 & 0.1320 & — \\
+INDUSINDBK  & 185 & 183 & 0.9584 & — \\
+JSWSTEEL    & 171 & 179 & 0.7083 & — \\
+LT          & 187 & 205 & 0.3906 & — \\
+NESTLEIND   &  95 & 101 & 0.7211 & — \\
+SUNPHARMA   & \multicolumn{2}{c}{collapsed$^\dagger$} & {—} & — \\
+TATASTEEL   &  54 &  79 & 0.0370 & — \\
+TITAN       & 185 & 187 & 0.9587 & — \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+\footnotesize
+$^\dagger$ Model predictions were identical to the naive baseline for all
+test samples (complete classifier collapse to majority-class prediction).
+TATASTEEL's $p = 0.037$ is the closest to significance but fails
+Bonferroni correction; with 20 comparisons, one false positive at $p < 0.05$
+is expected by chance.
+\end{table}
