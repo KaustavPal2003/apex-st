@@ -1,11 +1,11 @@
 {
   "symbol": "ADANIPORTS",
-  "mu0": -0.0004414110576558587,
-  "sigma0": 0.01972427148377756,
+  "mu0": -0.0003556032456005216,
+  "sigma0": 0.019697935101612316,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 6.943253191099823,
-  "max_s_neg_insample": 5.367288530475832,
+  "max_s_pos_insample": 6.938846195334862,
+  "max_s_neg_insample": 5.318620540178011,
   "insample_drift_flags": 3,
   "n_insample": 395
 }

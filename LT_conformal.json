@@ -2,7 +2,7 @@
   "symbol": "LT",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 2626.098990157996,
-  "empirical_coverage": 0.5670391061452514,
-  "n_calibration": 358
+  "half_width": 0.022586035348361518,
+  "empirical_coverage": 0.8886075949367088,
+  "n_calibration": 394
 }

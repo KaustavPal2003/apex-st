@@ -4,7 +4,6 @@
     "ADANIPORTS",
     "APOLLOHOSP",
     "ASIANPAINT",
-    "AXISBANK",
     "BAJAJ-AUTO",
     "BAJFINANCE",
     "BHARTIARTL",
@@ -16,11 +15,11 @@
     "ICICIBANK",
     "INDUSINDBK",
     "JSWSTEEL",
-    "LT",
     "NESTLEIND",
     "SUNPHARMA",
     "TATASTEEL",
-    "TITAN"
+    "TITAN",
+    "ULTRACEMCO"
   ],
   "generated_from": [
     "ADANIENT",

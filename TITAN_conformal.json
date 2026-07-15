@@ -2,7 +2,7 @@
   "symbol": "TITAN",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.020303719577753,
-  "empirical_coverage": 0.8886075949367088,
+  "half_width": 0.021306915199242268,
+  "empirical_coverage": 0.9037974683544304,
   "n_calibration": 394
 }

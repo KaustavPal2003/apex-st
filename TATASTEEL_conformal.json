@@ -2,7 +2,7 @@
   "symbol": "TATASTEEL",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.0254240296635164,
-  "empirical_coverage": 0.8668407310704961,
+  "half_width": 0.025508700731373332,
+  "empirical_coverage": 0.8772845953002611,
   "n_calibration": 383
 }

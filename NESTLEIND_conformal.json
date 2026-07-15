@@ -2,7 +2,7 @@
   "symbol": "NESTLEIND",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.01983039874301411,
-  "empirical_coverage": 0.9086161879895561,
+  "half_width": 0.019844805768280054,
+  "empirical_coverage": 0.9112271540469974,
   "n_calibration": 383
 }

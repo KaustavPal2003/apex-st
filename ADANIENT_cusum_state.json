@@ -1,11 +1,11 @@
 {
   "symbol": "ADANIENT",
-  "mu0": 0.0010161229394909726,
-  "sigma0": 0.025721666863872714,
+  "mu0": 0.0013426257937312527,
+  "sigma0": 0.02577333913848535,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 9.467549520837938,
-  "max_s_neg_insample": 3.855301155790828,
+  "max_s_pos_insample": 9.43239973705145,
+  "max_s_neg_insample": 3.875899116603513,
   "insample_drift_flags": 4,
   "n_insample": 395
 }

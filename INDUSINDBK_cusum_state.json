@@ -1,11 +1,11 @@
 {
   "symbol": "INDUSINDBK",
-  "mu0": 0.0007664312992437059,
-  "sigma0": 0.024944899986577267,
+  "mu0": 0.0009164872107232189,
+  "sigma0": 0.024990267258864877,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 14.650437412913577,
-  "max_s_neg_insample": 5.508352560234136,
+  "max_s_pos_insample": 14.643210548409584,
+  "max_s_neg_insample": 5.543060439446814,
   "insample_drift_flags": 15,
   "n_insample": 383
 }

@@ -2,7 +2,7 @@
   "symbol": "ADANIPORTS",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.02889185489585557,
+  "half_width": 0.028747747827151098,
   "empirical_coverage": 0.9063291139240506,
   "n_calibration": 394
 }

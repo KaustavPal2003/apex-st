@@ -2,7 +2,7 @@
   "symbol": "ICICIBANK",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 385.09142213959933,
-  "empirical_coverage": 0.13966480446927373,
-  "n_calibration": 358
+  "half_width": 0.017839854753335115,
+  "empirical_coverage": 0.8962025316455696,
+  "n_calibration": 394
 }

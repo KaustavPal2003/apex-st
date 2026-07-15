@@ -2,7 +2,7 @@
   "symbol": "BAJAJ-AUTO",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.025200710589359254,
-  "empirical_coverage": 0.9037974683544304,
+  "half_width": 0.024902764197230944,
+  "empirical_coverage": 0.8936708860759494,
   "n_calibration": 394
 }

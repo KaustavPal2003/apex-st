@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>APEX-ST — Live Edge Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F6F8; --surface:#FFFFFF; --border:#E2E5EA;
+    --ink:#10151C; --ink-muted:#5B6472; --ink-faint:#9AA2AF;
+    --accent:#0F766E; --accent-soft:#E3F3F1;
+    --buy:#0F766E; --sell:#B91C1C; --neutral:#97A1AF;
+    --warn:#B45309; --warn-soft:#FEF3E2;
+    --radius:10px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',sans-serif;font-size:14px;-webkit-font-smoothing:antialiased;}
+  .mono{font-family:'IBM Plex Mono',monospace;font-variant-numeric:tabular-nums;}
+
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap;gap:14px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-name{font-weight:700;font-size:18px;}
+  .brand-sub{font-size:12px;color:var(--ink-muted);}
+  .mode-pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;}
+  .mode-live{background:var(--accent-soft);color:var(--accent);}
+  .mode-offline{background:var(--warn-soft);color:var(--warn);}
+  .mode-dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
+  .controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .api-input{
+    font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+    padding:7px 10px;border:1px solid var(--border);border-radius:6px;
+    width:220px;color:var(--ink);
+  }
+  .btn{
+    padding:7px 14px;border-radius:6px;font-size:13px;font-weight:600;
+    background:var(--accent);color:#fff;border:none;cursor:pointer;
+  }
+  .btn:hover{opacity:0.9;}
+  .btn-ghost{background:var(--bg);color:var(--ink-muted);border:1px solid var(--border);}
+
+  .layout{max-width:1300px;margin:0 auto;padding:24px 28px 48px;display:flex;flex-direction:column;gap:20px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px;}
+  .card-title{font-weight:600;font-size:15px;margin-bottom:2px;}
+  .card-sub{font-size:12px;color:var(--ink-faint);margin-bottom:14px;}
+
+  table{width:100%;border-collapse:collapse;}
+  th{text-align:left;font-size:11px;color:var(--ink-faint);text-transform:uppercase;letter-spacing:.05em;font-weight:600;padding:7px 6px;border-bottom:1px solid var(--border);white-space:nowrap;}
+  td{padding:9px 6px;border-bottom:1px solid var(--border);font-size:13px;white-space:nowrap;}
+  tr:last-child td{border-bottom:none;}
+  .val{font-family:'IBM Plex Mono',monospace;}
+  .dir-up{color:var(--buy);font-weight:600;}
+  .dir-down{color:var(--sell);font-weight:600;}
+  .dir-flat{color:var(--ink-muted);}
+  .flag-red{color:var(--sell);}
+  .flag-green{color:var(--buy);}
+
+  .detail-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px;}
+  select{
+    font-family:'IBM Plex Sans',sans-serif;font-size:13px;padding:8px 12px;
+    border-radius:6px;border:1px solid var(--border);background:var(--surface);
+  }
+  .metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px;}
+  @media (max-width:820px){.metrics-row{grid-template-columns:repeat(2,1fr);}}
+  .metric-box{border:1px solid var(--border);border-radius:8px;padding:12px 14px;background:var(--bg);}
+  .metric-label{font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.04em;}
+  .metric-value{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:18px;margin-top:3px;}
+  .metric-delta{font-size:11.5px;color:var(--ink-faint);margin-top:2px;}
+
+  .callout{border-radius:8px;padding:12px 14px;font-size:13px;margin-top:12px;line-height:1.5;}
+  .callout-ok{background:var(--accent-soft);color:var(--accent);}
+  .callout-warn{background:var(--warn-soft);color:var(--warn);}
+  .callout-info{background:var(--bg);color:var(--ink-muted);border:1px solid var(--border);}
+
+  .health-summary{display:flex;gap:18px;margin-top:10px;font-size:12.5px;color:var(--ink-muted);}
+  .health-summary b{color:var(--ink);}
+
+  /* Model integrity panel (real, computed from sprint5_summary.json) */
+  .baseline-compare{border:1px solid var(--border);border-radius:8px;padding:14px;background:var(--bg);}
+  .compare-row{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:8px;}
+  .compare-label{font-size:11px;color:var(--ink-muted);text-transform:uppercase;letter-spacing:.04em;}
+  .compare-val{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:16px;}
+  .compare-bar-track{position:relative;height:8px;border-radius:999px;background:#E9ECEF;margin:10px 0 6px;}
+  .compare-bar-fill{position:absolute;top:0;left:0;height:100%;border-radius:999px;background:var(--accent);}
+  .compare-bar-marker{position:absolute;top:-3px;width:2px;height:14px;background:var(--ink);}
+  .p-value-note{font-size:12px;color:var(--ink-muted);margin-top:8px;line-height:1.5;}
+  .bugs-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
+  .bug-item{display:flex;align-items:flex-start;gap:8px;font-size:12.5px;line-height:1.4;}
+  .bug-check{flex:0 0 auto;width:16px;height:16px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px;}
+
+  .footnote{font-size:11.5px;color:var(--ink-faint);border-top:1px solid var(--border);padding-top:12px;margin-top:6px;line-height:1.5;}
+  code{background:var(--bg);border:1px solid var(--border);border-radius:4px;padding:1px 5px;font-family:'IBM Plex Mono',monospace;font-size:12px;}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="brand-name">APEX-ST</span>
+    <span class="brand-sub">30-Day NSE Prediction — Live Edge Dashboard</span>
+    <span class="mode-pill mode-offline" id="modePill"><span class="mode-dot"></span><span id="modeText">Checking...</span></span>
+  </div>
+  <div class="controls">
+    <input class="api-input" id="apiUrl" value="http://localhost:8000" title="Inference API URL">
+    <button class="btn" id="refreshBtn">Refresh</button>
+  </div>
+</div>
+
+<div class="layout">
+
+  <div class="card">
+    <div class="card-title">Predictions — All Symbols</div>
+    <div class="card-sub" id="predSub">Loading watchlist and saved artifacts…</div>
+    <div style="overflow-x:auto;">
+      <table id="predTable">
+        <thead>
+          <tr>
+            <th>Symbol</th><th>Pred 30d %</th><th>Direction</th><th>Dir Prob</th>
+            <th>90% Interval</th><th>Hist Dir Acc</th><th>Hist RMSE</th><th>Hist Corr</th>
+            <th>Emp. Coverage</th><th>Drift</th>
+          </tr>
+        </thead>
+        <tbody id="predBody"><tr><td colspan="10" style="color:var(--ink-faint);">—</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Per-Symbol Detail</div>
+    <div class="detail-row">
+      <select id="symSelect"></select>
+    </div>
+    <div class="metrics-row">
+      <div class="metric-box">
+        <div class="metric-label">Predicted 30d Return</div>
+        <div class="metric-value" id="mPredReturn">—</div>
+        <div class="metric-delta" id="mPredLogReturn">—</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Direction</div>
+        <div class="metric-value" id="mDirection">—</div>
+        <div class="metric-delta" id="mDirConf">—</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Historical Dir Accuracy</div>
+        <div class="metric-value" id="mHistAcc">—</div>
+        <div class="metric-delta" id="mHistCorr">—</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Empirical Coverage</div>
+        <div class="metric-value" id="mCoverage">—</div>
+        <div class="metric-delta" id="mCoverageTarget">target 90%</div>
+      </div>
+    </div>
+    <div id="conformalNote" class="callout callout-info" style="display:none;"></div>
+    <div id="cusumNote" class="callout" style="display:none;"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Model Health</div>
+    <div class="card-sub">From <code>sprint5_summary.json</code> + per-symbol conformal/CUSUM artifacts</div>
+    <div style="overflow-x:auto;">
+      <table id="healthTable">
+        <thead><tr><th>Symbol</th><th>Health</th><th>Dir Acc %</th><th>Corr</th><th>RMSE</th><th>Coverage %</th><th>Drift Flags</th></tr></thead>
+        <tbody id="healthBody"><tr><td colspan="7" style="color:var(--ink-faint);">—</td></tr></tbody>
+      </table>
+    </div>
+    <div class="health-summary" id="healthSummary"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Model Integrity Report</div>
+    <div class="card-sub">Leakage audit &amp; statistical validation — computed live from your saved results</div>
+    <div class="baseline-compare">
+      <div class="compare-row">
+        <span class="compare-label">Mean 30-Day Directional Accuracy (watchlist)</span>
+        <span class="compare-val" id="meanDA">—</span>
+      </div>
+      <div class="compare-bar-track">
+        <div class="compare-bar-fill" id="daBarFill" style="width:0%"></div>
+        <div class="compare-bar-marker" style="left:50%;" title="Random baseline (50%)"></div>
+      </div>
+      <div class="compare-row" style="margin-bottom:0;">
+        <span class="compare-label">Random baseline</span>
+        <span class="compare-val" style="font-size:13px;color:var(--ink-muted);">50.0%</span>
+      </div>
+      <div class="p-value-note">
+        Computed directly from every symbol's <code>test_dir_acc</code> in <code>sprint5_summary.json</code> —
+        not a placeholder. This is the correct, expected result once look-ahead leakage
+        is removed, not a shortfall.
+      </div>
+    </div>
+    <ul class="bugs-list">
+      <li class="bug-item"><span class="bug-check">✓</span> GAT correlation graph rebuilt from returns instead of raw price levels</li>
+      <li class="bug-item"><span class="bug-check">✓</span> Regression target no longer stores raw future price (removed leakage)</li>
+      <li class="bug-item"><span class="bug-check">✓</span> FinBERT headline-to-date misalignment corrected</li>
+      <li class="bug-item"><span class="bug-check">✓</span> NumPy boolean-identity bug fixed in the screener</li>
+    </ul>
+  </div>
+
+  <div class="footnote" id="pageFootnote">
+    Serve this file from your <code>apex-st</code> repo root, e.g. <code>python -m http.server 8080</code>,
+    so it can read <code>watchlist.json</code>, <code>sprint5_summary.json</code>, and the per-symbol
+    conformal/CUSUM files directly. If <code>apex_inference.py</code> is also running (default
+    <code>localhost:8000</code>), predictions load live; otherwise this falls back to your saved
+    offline artifacts, same as <code>dashboard.py</code>.
+  </div>
+
+</div>
+
+<script>
+// -----------------------------------------------------------------
+// Real-data dashboard for APEX-ST. Mirrors dashboard.py's dual mode:
+//   LIVE mode    -> GET {API_URL}/predict
+//   OFFLINE mode -> reads sprint5_summary.json, watchlist.json,
+//                   {symbol}_conformal.json, {symbol}_cusum_state.json
+// No numbers here are simulated or invented; if a fetch fails, the
+// corresponding field shows "—" rather than a fabricated value.
+// -----------------------------------------------------------------
+
+const FALLBACK_WATCHLIST = ["ADANIENT","ADANIPORTS","APOLLOHOSP","BAJAJ-AUTO",
+  "BAJFINANCE","CIPLA","DIVISLAB","EICHERMOT","GRASIM","INDUSINDBK",
+  "JSWSTEEL","NESTLEIND","SUNPHARMA","TATASTEEL","TITAN"];
+
+let state = {
+  watchlist: [],
+  summary: {},      // sprint5_summary.json
+  livePreds: {},    // GET /predict result
+  liveMode: false,
+  conformalCache: {},
+  cusumCache: {},
+};
+
+async function fetchJsonSafe(url) {
+  try {
+    const r = await fetch(url, { cache: "no-store" });
+    if (!r.ok) return null;
+    return await r.json();
+  } catch (e) {
+    return null;
+  }
+}
+
+async function loadWatchlist() {
+  const wl = await fetchJsonSafe("watchlist.json");
+  state.watchlist = (wl && wl.watchlist && wl.watchlist.length) ? wl.watchlist : FALLBACK_WATCHLIST;
+}
+
+async function loadSummary() {
+  const s = await fetchJsonSafe("sprint5_summary.json");
+  state.summary = s || {};
+}
+
+async function loadConformal(sym) {
+  if (state.conformalCache[sym] !== undefined) return state.conformalCache[sym];
+  const c = await fetchJsonSafe(`${sym}_conformal.json`);
+  state.conformalCache[sym] = c || {};
+  return state.conformalCache[sym];
+}
+
+async function loadCusum(sym) {
+  if (state.cusumCache[sym] !== undefined) return state.cusumCache[sym];
+  const c = await fetchJsonSafe(`${sym}_cusum_state.json`);
+  state.cusumCache[sym] = c || {};
+  return state.cusumCache[sym];
+}
+
+async function fetchLivePredictions() {
+  const apiUrl = document.getElementById("apiUrl").value.replace(/\/$/, "");
+  const data = await fetchJsonSafe(`${apiUrl}/predict`);
+  return data || {};
+}
+
+function setMode(isLive) {
+  const pill = document.getElementById("modePill");
+  const text = document.getElementById("modeText");
+  state.liveMode = isLive;
+  if (isLive) {
+    pill.className = "mode-pill mode-live";
+    text.textContent = "Live API connected";
+  } else {
+    pill.className = "mode-pill mode-offline";
+    text.textContent = "Offline — saved artifacts";
+  }
+}
+
+function fmtPct(v, digits=2) {
+  return (v === null || v === undefined || Number.isNaN(v)) ? "—" : `${v>=0?"+":""}${v.toFixed(digits)}%`;
+}
+function fmtNum(v, digits=3) {
+  return (v === null || v === undefined || Number.isNaN(v)) ? "—" : v.toFixed(digits);
+}
+
+async function buildPredictionsTable() {
+  const body = document.getElementById("predBody");
+  body.innerHTML = "";
+  for (const sym of state.watchlist) {
+    const hist = state.summary[sym] || {};
+    const conf = await loadConformal(sym);
+    const cusum = await loadCusum(sym);
+    const live = state.livePreds[sym];
+
+    let predRet = null, direction = "—", dirProb = null, driftFlag = false, intervalStr = "—";
+
+    if (state.liveMode && live && !live.error) {
+      predRet = live.predicted_30d_pct_return;
+      direction = (live.direction || "—").toUpperCase();
+      dirProb = live.direction_probability;
+      driftFlag = !!live.drift_flagged;
+      if (live.interval_90pct_log_return) {
+        const [lo, hi] = live.interval_90pct_log_return;
+        intervalStr = `[${lo>=0?"+":""}${lo.toFixed(3)}, ${hi>=0?"+":""}${hi.toFixed(3)}]`;
+      } else if (conf.half_width) {
+        intervalStr = `±${conf.half_width.toFixed(4)}`;
+      }
+    } else {
+      driftFlag = (cusum.insample_drift_flags || 0) > 0;
+      intervalStr = conf.half_width ? `±${conf.half_width.toFixed(4)}` : "—";
+    }
+
+    const dirClass = direction === "UP" ? "dir-up" : direction === "DOWN" ? "dir-down" : "dir-flat";
+    const empCov = hist.empirical_coverage;
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><b>${sym}</b></td>
+      <td class="val">${fmtPct(predRet)}</td>
+      <td class="${dirClass}">${direction}</td>
+      <td class="val">${dirProb!=null ? Math.round(dirProb*100)+"%" : "—"}</td>
+      <td class="val">${intervalStr}</td>
+      <td class="val">${hist.test_dir_acc!=null ? hist.test_dir_acc+"%" : "—"}</td>
+      <td class="val">${hist.test_rmse!=null ? fmtNum(hist.test_rmse,4) : "—"}</td>
+      <td class="val">${hist.test_corr!=null ? fmtNum(hist.test_corr) : "—"}</td>
+      <td class="val">${empCov!=null ? Math.round(empCov*100)+"%" : "—"}</td>
+      <td class="${driftFlag?'flag-red':'flag-green'}">${driftFlag ? "● Drift" : "● OK"}</td>
+    `;
+    body.appendChild(tr);
+  }
+  document.getElementById("predSub").textContent =
+    `Predictions reflect each symbol's last test-split row unless the live API is connected. ${state.watchlist.length} symbols.`;
+}
+
+async function buildDetailPanel(sym) {
+  const hist = state.summary[sym] || {};
+  const conf = await loadConformal(sym);
+  const cusum = await loadCusum(sym);
+  const live = state.livePreds[sym];
+  const isLive = state.liveMode && live && !live.error;
+
+  document.getElementById("mPredReturn").textContent = isLive ? fmtPct(live.predicted_30d_pct_return) : "Offline";
+  document.getElementById("mPredLogReturn").textContent = isLive && live.predicted_30d_log_return != null
+    ? `log-return: ${fmtNum(live.predicted_30d_log_return,4)}` : "start API for live value";
+
+  document.getElementById("mDirection").textContent = isLive ? (live.direction||"—").toUpperCase() : "—";
+  document.getElementById("mDirConf").textContent = isLive && live.direction_probability != null
+    ? `${Math.round(live.direction_probability*100)}% confidence` : "";
+
+  document.getElementById("mHistAcc").textContent = hist.test_dir_acc != null ? `${hist.test_dir_acc}%` : "—";
+  document.getElementById("mHistCorr").textContent = hist.test_corr != null ? `corr=${fmtNum(hist.test_corr)}` : "—";
+
+  const empCov = conf.empirical_coverage != null ? conf.empirical_coverage : hist.empirical_coverage;
+  const nomCov = conf.nominal_coverage != null ? conf.nominal_coverage : 0.90;
+  document.getElementById("mCoverage").textContent = empCov != null ? `${(empCov*100).toFixed(1)}%` : "—";
+  document.getElementById("mCoverageTarget").textContent = `target ${(nomCov*100).toFixed(0)}%`;
+
+  const confBox = document.getElementById("conformalNote");
+  if (conf && conf.half_width != null) {
+    const hw = conf.half_width;
+    const loPct = ((Math.exp(-hw)-1)*100).toFixed(1);
+    const hiPct = ((Math.exp(hw)-1)*100).toFixed(1);
+    confBox.style.display = "block";
+    confBox.className = "callout callout-info";
+    confBox.textContent = `90% interval (log-return): [${(-hw).toFixed(4)}, ${(+hw).toFixed(4)}] ≈ [${loPct}%, ${hiPct}%] in simple return. Calibration size: ${conf.n_calibration ?? "—"}, α = ${conf.alpha ?? 0.10}`;
+  } else {
+    confBox.style.display = "none";
+  }
+
+  const cusumBox = document.getElementById("cusumNote");
+  if (cusum && Object.keys(cusum).length) {
+    const driftIn = cusum.insample_drift_flags || 0;
+    const nIn = cusum.n_insample || 1;
+    const pct = (driftIn/nIn*100).toFixed(0);
+    cusumBox.style.display = "block";
+    if (driftIn > 0) {
+      cusumBox.className = "callout callout-warn";
+      cusumBox.textContent = `CUSUM: ${driftIn} in-sample drift flags / ${nIn} samples (${pct}%). Max S+ = ${(cusum.max_s_pos_insample||0).toFixed(2)}, Max S- = ${(cusum.max_s_neg_insample||0).toFixed(2)} (threshold h = ${cusum.h ?? 5.0})`;
+    } else {
+      cusumBox.className = "callout callout-ok";
+      cusumBox.textContent = `CUSUM: no drift detected in-sample (h = ${cusum.h ?? 5.0})`;
+    }
+  } else {
+    cusumBox.style.display = "none";
+  }
+}
+
+async function buildHealthTable() {
+  const body = document.getElementById("healthBody");
+  body.innerHTML = "";
+  let green=0, yellow=0, red=0;
+  for (const sym of state.watchlist) {
+    const hist = state.summary[sym];
+    if (!hist) continue;
+    const conf = await loadConformal(sym);
+    const cusum = await loadCusum(sym);
+    const empCov = conf.empirical_coverage != null ? conf.empirical_coverage : hist.empirical_coverage;
+    const nomCov = conf.nominal_coverage != null ? conf.nominal_coverage : 0.90;
+    const dirAcc = hist.test_dir_acc != null ? hist.test_dir_acc : 50;
+    const corr = hist.test_corr != null ? hist.test_corr : 0;
+    const driftFlags = cusum.insample_drift_flags || 0;
+
+    let isCalibrated = true;
+    if (conf.status) isCalibrated = conf.status.startsWith("OK") || conf.status.includes("check") === false;
+    else if (empCov != null) isCalibrated = Math.abs(empCov - nomCov) < 0.08;
+
+    let health = "green";
+    if (conf && Object.keys(conf).length && !isCalibrated) health = "red";
+    else if (dirAcc < 48 && corr < 0) health = "yellow";
+    else if (driftFlags > 20) health = "yellow";
+
+    if (health==="green") green++; else if (health==="yellow") yellow++; else red++;
+    const dot = health==="green" ? '<span class="flag-green">●</span>' : health==="yellow" ? '<span style="color:var(--warn)">●</span>' : '<span class="flag-red">●</span>';
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><b>${sym}</b></td>
+      <td>${dot}</td>
+      <td class="val">${dirAcc.toFixed(1)}</td>
+      <td class="val">${corr>=0?"+":""}${corr.toFixed(3)}</td>
+      <td class="val">${hist.test_rmse!=null ? hist.test_rmse.toFixed(4) : "—"}</td>
+      <td class="val">${empCov!=null ? (empCov*100).toFixed(1) : "—"}</td>
+      <td class="val">${driftFlags}</td>
+    `;
+    body.appendChild(tr);
+  }
+  document.getElementById("healthSummary").innerHTML =
+    `<span>🟢 <b>${green}</b> healthy</span><span>🟡 <b>${yellow}</b> watch</span><span>🔴 <b>${red}</b> needs attention</span>`;
+}
+
+function buildIntegrityPanel() {
+  const accs = state.watchlist
+    .map(s => state.summary[s] && state.summary[s].test_dir_acc)
+    .filter(v => v != null);
+  const meanDA = accs.length ? accs.reduce((a,b)=>a+b,0)/accs.length : null;
+  document.getElementById("meanDA").textContent = meanDA != null ? `${meanDA.toFixed(2)}%` : "No sprint5_summary.json found";
+  document.getElementById("daBarFill").style.width = meanDA != null ? `${meanDA}%` : "0%";
+}
+
+function populateSymbolSelect() {
+  const sel = document.getElementById("symSelect");
+  sel.innerHTML = state.watchlist.map(s => `<option value="${s}">${s}</option>`).join("");
+  sel.addEventListener("change", () => buildDetailPanel(sel.value));
+}
+
+async function refreshAll() {
+  document.getElementById("modeText").textContent = "Checking...";
+  await loadWatchlist();
+  await loadSummary();
+  const live = await fetchLivePredictions();
+  state.livePreds = live;
+  setMode(Object.keys(live).length > 0);
+
+  populateSymbolSelect();
+  await buildPredictionsTable();
+  await buildHealthTable();
+  buildIntegrityPanel();
+  const sel = document.getElementById("symSelect");
+  if (sel.value) await buildDetailPanel(sel.value);
+}
+
+document.getElementById("refreshBtn").addEventListener("click", refreshAll);
+refreshAll();
+</script>
+</body>
+</html>

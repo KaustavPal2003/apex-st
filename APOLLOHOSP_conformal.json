@@ -2,7 +2,7 @@
   "symbol": "APOLLOHOSP",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.022950191079133053,
+  "half_width": 0.022837067193110582,
   "empirical_coverage": 0.9367088607594937,
   "n_calibration": 394
 }

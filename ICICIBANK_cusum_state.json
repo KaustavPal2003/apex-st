@@ -1,11 +1,11 @@
 {
   "symbol": "ICICIBANK",
-  "mu0": -705.4914248162808,
-  "sigma0": 185.33072581072398,
+  "mu0": 0.00040100138838221864,
+  "sigma0": 0.011570303331434046,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 91.77344094550237,
-  "max_s_neg_insample": 39.66082975202231,
-  "insample_drift_flags": 270,
-  "n_insample": 358
+  "max_s_pos_insample": 5.325442880603943,
+  "max_s_neg_insample": 6.074833356222763,
+  "insample_drift_flags": 6,
+  "n_insample": 395
 }

@@ -1,11 +1,11 @@
 {
   "symbol": "CIPLA",
-  "mu0": 0.0005891855469392024,
-  "sigma0": 0.013407993958243148,
+  "mu0": 0.0005786121355021914,
+  "sigma0": 0.01340593130046624,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 4.710945068598085,
-  "max_s_neg_insample": 6.940316809908945,
+  "max_s_pos_insample": 4.713029742801694,
+  "max_s_neg_insample": 6.940332540432706,
   "insample_drift_flags": 3,
   "n_insample": 395
 }
