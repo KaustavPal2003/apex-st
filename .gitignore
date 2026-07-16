@@ -60,3 +60,7 @@ secrets.py
 # *_conformal.json              ✅ included
 # *_cusum_state.json            ✅ included
 .venv/
+NSE_OHLCV_*.csv
+*.log
+OUTPUT*.txt
+New Text Document.txt
