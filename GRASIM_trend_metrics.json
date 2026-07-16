@@ -1,0 +1,9 @@
+{
+  "symbol": "GRASIM",
+  "evaluation_timestamp": "2026-07-16T16:02:47.410753",
+  "evaluated_days": 747,
+  "trend_prediction_accuracy": 51.41,
+  "step_persistence_baseline_accuracy": 49.13,
+  "window_start": "2022-12-13",
+  "window_end": "2025-12-31"
+}

@@ -1,0 +1,9 @@
+{
+  "symbol": "BAJFINANCE",
+  "evaluation_timestamp": "2026-07-16T16:02:43.963754",
+  "evaluated_days": 731,
+  "trend_prediction_accuracy": 47.61,
+  "step_persistence_baseline_accuracy": 49.11,
+  "window_start": "2023-01-06",
+  "window_end": "2025-12-31"
+}

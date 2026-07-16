@@ -1,0 +1,9 @@
+{
+  "symbol": "APOLLOHOSP",
+  "evaluation_timestamp": "2026-07-16T16:02:42.540651",
+  "evaluated_days": 747,
+  "trend_prediction_accuracy": 55.02,
+  "step_persistence_baseline_accuracy": 49.8,
+  "window_start": "2022-12-14",
+  "window_end": "2025-12-31"
+}

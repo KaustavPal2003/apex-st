@@ -1,0 +1,9 @@
+{
+  "symbol": "EICHERMOT",
+  "evaluation_timestamp": "2026-07-16T16:02:46.025331",
+  "evaluated_days": 747,
+  "trend_prediction_accuracy": 52.34,
+  "step_persistence_baseline_accuracy": 48.73,
+  "window_start": "2022-12-13",
+  "window_end": "2025-12-31"
+}

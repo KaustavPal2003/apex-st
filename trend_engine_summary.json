@@ -1,0 +1,143 @@
+{
+  "generated": "2026-07-16T16:02:51.634355",
+  "n_symbols": 15,
+  "mean_trend_prediction_accuracy": 50.66,
+  "mean_step_persistence_baseline_accuracy": 49.13,
+  "per_symbol": [
+    {
+      "symbol": "ADANIENT",
+      "evaluation_timestamp": "2026-07-16T16:02:41.212694",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 40.7,
+      "step_persistence_baseline_accuracy": 51.94,
+      "window_start": "2022-12-14",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "evaluation_timestamp": "2026-07-16T16:02:41.881737",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 52.21,
+      "step_persistence_baseline_accuracy": 51.67,
+      "window_start": "2022-12-14",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "evaluation_timestamp": "2026-07-16T16:02:42.540651",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 55.02,
+      "step_persistence_baseline_accuracy": 49.8,
+      "window_start": "2022-12-14",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "BAJAJ-AUTO",
+      "evaluation_timestamp": "2026-07-16T16:02:43.229315",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 46.05,
+      "step_persistence_baseline_accuracy": 48.19,
+      "window_start": "2022-12-14",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "BAJFINANCE",
+      "evaluation_timestamp": "2026-07-16T16:02:43.963754",
+      "evaluated_days": 731,
+      "trend_prediction_accuracy": 47.61,
+      "step_persistence_baseline_accuracy": 49.11,
+      "window_start": "2023-01-06",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "CIPLA",
+      "evaluation_timestamp": "2026-07-16T16:02:44.635725",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 48.86,
+      "step_persistence_baseline_accuracy": 48.19,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "DIVISLAB",
+      "evaluation_timestamp": "2026-07-16T16:02:45.353329",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 57.56,
+      "step_persistence_baseline_accuracy": 47.93,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "EICHERMOT",
+      "evaluation_timestamp": "2026-07-16T16:02:46.025331",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 52.34,
+      "step_persistence_baseline_accuracy": 48.73,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "GRASIM",
+      "evaluation_timestamp": "2026-07-16T16:02:47.410753",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 51.41,
+      "step_persistence_baseline_accuracy": 49.13,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "evaluation_timestamp": "2026-07-16T16:02:48.071965",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 49.53,
+      "step_persistence_baseline_accuracy": 50.07,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "JSWSTEEL",
+      "evaluation_timestamp": "2026-07-16T16:02:48.744388",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 49.0,
+      "step_persistence_baseline_accuracy": 45.78,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "NESTLEIND",
+      "evaluation_timestamp": "2026-07-16T16:02:49.440908",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 45.78,
+      "step_persistence_baseline_accuracy": 47.12,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "evaluation_timestamp": "2026-07-16T16:02:50.196228",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 54.08,
+      "step_persistence_baseline_accuracy": 46.72,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "evaluation_timestamp": "2026-07-16T16:02:50.916154",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 47.79,
+      "step_persistence_baseline_accuracy": 52.21,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    },
+    {
+      "symbol": "TITAN",
+      "evaluation_timestamp": "2026-07-16T16:02:51.627355",
+      "evaluated_days": 747,
+      "trend_prediction_accuracy": 61.98,
+      "step_persistence_baseline_accuracy": 50.33,
+      "window_start": "2022-12-13",
+      "window_end": "2025-12-31"
+    }
+  ]
+}

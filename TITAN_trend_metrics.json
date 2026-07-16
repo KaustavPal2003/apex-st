@@ -1,0 +1,9 @@
+{
+  "symbol": "TITAN",
+  "evaluation_timestamp": "2026-07-16T16:02:51.627355",
+  "evaluated_days": 747,
+  "trend_prediction_accuracy": 61.98,
+  "step_persistence_baseline_accuracy": 50.33,
+  "window_start": "2022-12-13",
+  "window_end": "2025-12-31"
+}

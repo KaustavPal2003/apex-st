@@ -1,0 +1,9 @@
+{
+  "symbol": "CIPLA",
+  "evaluation_timestamp": "2026-07-16T16:02:44.635725",
+  "evaluated_days": 747,
+  "trend_prediction_accuracy": 48.86,
+  "step_persistence_baseline_accuracy": 48.19,
+  "window_start": "2022-12-13",
+  "window_end": "2025-12-31"
+}

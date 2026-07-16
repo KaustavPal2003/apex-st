@@ -1,0 +1,9 @@
+{
+  "symbol": "ADANIPORTS",
+  "evaluation_timestamp": "2026-07-16T16:02:41.881737",
+  "evaluated_days": 747,
+  "trend_prediction_accuracy": 52.21,
+  "step_persistence_baseline_accuracy": 51.67,
+  "window_start": "2022-12-14",
+  "window_end": "2025-12-31"
+}
