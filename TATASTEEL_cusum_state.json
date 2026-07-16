@@ -1,11 +1,11 @@
 {
   "symbol": "TATASTEEL",
-  "mu0": -0.0007456848728403634,
-  "sigma0": 0.01798934494654647,
+  "mu0": -0.0006351945375101271,
+  "sigma0": 0.018265515607744885,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 8.694936394213398,
-  "max_s_neg_insample": 3.137942103181673,
-  "insample_drift_flags": 4,
-  "n_insample": 383
+  "max_s_pos_insample": 8.39362568917463,
+  "max_s_neg_insample": 5.014022573412564,
+  "insample_drift_flags": 5,
+  "n_insample": 371
 }

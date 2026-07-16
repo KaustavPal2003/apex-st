@@ -1,11 +1,11 @@
 {
   "symbol": "JSWSTEEL",
-  "mu0": -0.0006371173933963747,
-  "sigma0": 0.015566670533838872,
+  "mu0": -0.0008985062780689775,
+  "sigma0": 0.015610456315934907,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 6.829125753370317,
-  "max_s_neg_insample": 3.1523793711845025,
+  "max_s_pos_insample": 6.618425918389741,
+  "max_s_neg_insample": 3.4842254597298448,
   "insample_drift_flags": 1,
-  "n_insample": 383
+  "n_insample": 371
 }

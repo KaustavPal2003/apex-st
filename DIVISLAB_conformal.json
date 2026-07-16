@@ -2,7 +2,7 @@
   "symbol": "DIVISLAB",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.025520704185523962,
-  "empirical_coverage": 0.8911392405063291,
-  "n_calibration": 394
+  "half_width": 0.02316851688503737,
+  "empirical_coverage": 0.8544474393530997,
+  "n_calibration": 371
 }

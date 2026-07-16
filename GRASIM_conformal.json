@@ -2,7 +2,7 @@
   "symbol": "GRASIM",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.02215443888140209,
-  "empirical_coverage": 0.8886075949367088,
-  "n_calibration": 394
+  "half_width": 0.019761189979041683,
+  "empirical_coverage": 0.8733153638814016,
+  "n_calibration": 371
 }

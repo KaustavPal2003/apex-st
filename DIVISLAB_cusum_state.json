@@ -1,11 +1,11 @@
 {
   "symbol": "DIVISLAB",
-  "mu0": 0.0003219271811827593,
-  "sigma0": 0.01579385899151068,
+  "mu0": -0.0005180241911991491,
+  "sigma0": 0.016751669175383347,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 4.836717451463983,
-  "max_s_neg_insample": 5.372821610174998,
-  "insample_drift_flags": 2,
-  "n_insample": 395
+  "max_s_pos_insample": 4.582818603604643,
+  "max_s_neg_insample": 5.54400681253426,
+  "insample_drift_flags": 3,
+  "n_insample": 371
 }

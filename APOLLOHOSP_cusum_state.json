@@ -1,11 +1,11 @@
 {
   "symbol": "APOLLOHOSP",
-  "mu0": -5.130263762802764e-06,
-  "sigma0": 0.013011474556422166,
+  "mu0": 2.044772634817638e-05,
+  "sigma0": 0.012817192869878025,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 5.604865046151491,
-  "max_s_neg_insample": 5.869042619073053,
+  "max_s_pos_insample": 5.784279327636049,
+  "max_s_neg_insample": 5.9240420425351425,
   "insample_drift_flags": 5,
-  "n_insample": 395
+  "n_insample": 371
 }

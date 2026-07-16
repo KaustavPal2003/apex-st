@@ -1,0 +1,11 @@
+{
+  "symbol": "DRREDDY",
+  "mu0": 0.004418114268649988,
+  "sigma0": 0.08427663062176521,
+  "k": 0.5,
+  "h": 5.0,
+  "max_s_pos_insample": 18.472281089990545,
+  "max_s_neg_insample": 1.0128075473976246,
+  "insample_drift_flags": 26,
+  "n_insample": 371
+}

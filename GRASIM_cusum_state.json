@@ -1,11 +1,11 @@
 {
   "symbol": "GRASIM",
-  "mu0": 0.0002595030577117253,
-  "sigma0": 0.014085234034498108,
+  "mu0": -0.000842743894857834,
+  "sigma0": 0.013532782216034047,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 4.451876175793894,
-  "max_s_neg_insample": 4.028014947723921,
+  "max_s_pos_insample": 4.751262204414374,
+  "max_s_neg_insample": 4.255866031370173,
   "insample_drift_flags": 0,
-  "n_insample": 395
+  "n_insample": 371
 }

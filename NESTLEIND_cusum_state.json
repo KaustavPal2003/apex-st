@@ -1,11 +1,11 @@
 {
   "symbol": "NESTLEIND",
-  "mu0": -0.0005366992498490402,
-  "sigma0": 0.012444898882183484,
+  "mu0": -0.0023324642238978137,
+  "sigma0": 0.03883632409360572,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 6.236876937537223,
-  "max_s_neg_insample": 8.206010519498221,
-  "insample_drift_flags": 21,
-  "n_insample": 383
+  "max_s_pos_insample": 17.811111300562004,
+  "max_s_neg_insample": 1.239231157913827,
+  "insample_drift_flags": 19,
+  "n_insample": 371
 }

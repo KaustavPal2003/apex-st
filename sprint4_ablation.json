@@ -2,621 +2,621 @@
   {
     "variant": "FusionA_Gated",
     "symbol": "ADANIENT",
-    "dir_acc": 47.09,
-    "corr": 0.045,
+    "dir_acc": 45.82,
+    "corr": -0.04,
+    "avg_conf": 17.7,
+    "n": 371,
+    "gate_means": [
+      0.891829252243042,
+      0.055387966334819794,
+      0.052782993763685226
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "ADANIENT",
+    "dir_acc": 44.74,
+    "corr": -0.028,
+    "avg_conf": 3.9,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "ADANIENT",
+    "dir_acc": 46.63,
+    "corr": 0.012,
     "avg_conf": 8.4,
-    "n": 395,
-    "gate_means": [
-      0.7263364195823669,
-      0.13037258386611938,
-      0.14329083263874054
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "ADANIENT",
-    "dir_acc": 50.63,
-    "corr": -0.065,
-    "avg_conf": 4.8,
-    "n": 395,
+    "n": 371,
     "gate_means": null
   },
   {
-    "variant": "FusionC_Transformer",
-    "symbol": "ADANIENT",
-    "dir_acc": 47.59,
+    "variant": "FusionA_Gated",
+    "symbol": "ADANIPORTS",
+    "dir_acc": 47.71,
     "corr": 0.073,
-    "avg_conf": 5.2,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "ADANIPORTS",
-    "dir_acc": 50.89,
-    "corr": 0.0,
-    "avg_conf": 4.3,
-    "n": 395,
-    "gate_means": [
-      0.9316775798797607,
-      0.014683211222290993,
-      0.053639162331819534
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "ADANIPORTS",
-    "dir_acc": 51.14,
-    "corr": -0.008,
-    "avg_conf": 1.8,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "ADANIPORTS",
-    "dir_acc": 48.61,
-    "corr": 0.0,
-    "avg_conf": 2.6,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "APOLLOHOSP",
-    "dir_acc": 52.91,
-    "corr": -0.016,
-    "avg_conf": 10.9,
-    "n": 395,
-    "gate_means": [
-      0.9546469449996948,
-      0.018519889563322067,
-      0.02683265134692192
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "APOLLOHOSP",
-    "dir_acc": 52.66,
-    "corr": 0.019,
-    "avg_conf": 7.4,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "APOLLOHOSP",
-    "dir_acc": 51.14,
-    "corr": -0.016,
-    "avg_conf": 3.1,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "ASIANPAINT",
-    "dir_acc": 52.15,
-    "corr": -0.002,
-    "avg_conf": 4.0,
-    "n": 395,
-    "gate_means": [
-      0.6470938324928284,
-      0.2521212100982666,
-      0.10078489035367966
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "ASIANPAINT",
-    "dir_acc": 51.65,
-    "corr": -0.022,
-    "avg_conf": 2.0,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "ASIANPAINT",
-    "dir_acc": 53.42,
-    "corr": -0.007,
-    "avg_conf": 0.9,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "AXISBANK",
-    "dir_acc": 50.63,
-    "corr": -0.053,
-    "avg_conf": 9.5,
-    "n": 395,
-    "gate_means": [
-      0.7471902370452881,
-      0.15378782153129578,
-      0.09902191162109375
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "AXISBANK",
-    "dir_acc": 51.9,
-    "corr": 0.0,
-    "avg_conf": 3.6,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "AXISBANK",
-    "dir_acc": 50.89,
-    "corr": -0.008,
-    "avg_conf": 7.2,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "BAJAJ-AUTO",
-    "dir_acc": 49.87,
-    "corr": 0.048,
-    "avg_conf": 2.3,
-    "n": 395,
-    "gate_means": [
-      0.8544755578041077,
-      0.051393773406744,
-      0.09413085877895355
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "BAJAJ-AUTO",
-    "dir_acc": 49.62,
-    "corr": 0.039,
-    "avg_conf": 4.3,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "BAJAJ-AUTO",
-    "dir_acc": 49.87,
-    "corr": -0.065,
-    "avg_conf": 8.8,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "BAJFINANCE",
-    "dir_acc": 47.85,
-    "corr": 0.073,
-    "avg_conf": 3.9,
-    "n": 395,
-    "gate_means": [
-      0.753642201423645,
-      0.14570246636867523,
-      0.10065536201000214
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "BAJFINANCE",
-    "dir_acc": 48.61,
-    "corr": 0.132,
-    "avg_conf": 6.9,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "BAJFINANCE",
-    "dir_acc": 50.13,
-    "corr": -0.029,
-    "avg_conf": 3.9,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "BHARTIARTL",
-    "dir_acc": 50.89,
-    "corr": -0.063,
-    "avg_conf": 9.9,
-    "n": 395,
-    "gate_means": [
-      0.6617840528488159,
-      0.26165127754211426,
-      0.07656437903642654
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "BHARTIARTL",
-    "dir_acc": 42.28,
-    "corr": 0.042,
-    "avg_conf": 3.2,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "BHARTIARTL",
-    "dir_acc": 45.06,
-    "corr": -0.098,
-    "avg_conf": 1.7,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "CIPLA",
-    "dir_acc": 50.63,
-    "corr": -0.039,
-    "avg_conf": 1.3,
-    "n": 395,
-    "gate_means": [
-      0.8154175281524658,
-      0.10144951939582825,
-      0.08313315361738205
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "CIPLA",
-    "dir_acc": 47.34,
-    "corr": -0.016,
-    "avg_conf": 1.1,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "CIPLA",
-    "dir_acc": 50.63,
-    "corr": 0.137,
-    "avg_conf": 1.4,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "DIVISLAB",
-    "dir_acc": 49.87,
-    "corr": 0.025,
-    "avg_conf": 8.2,
-    "n": 395,
-    "gate_means": [
-      0.9427234530448914,
-      0.008175871334969997,
-      0.04910048469901085
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "DIVISLAB",
-    "dir_acc": 49.87,
-    "corr": 0.049,
-    "avg_conf": 10.2,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "DIVISLAB",
-    "dir_acc": 49.87,
-    "corr": 0.047,
-    "avg_conf": 6.5,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "EICHERMOT",
-    "dir_acc": 51.39,
-    "corr": 0.031,
-    "avg_conf": 22.6,
-    "n": 395,
-    "gate_means": [
-      0.8856514692306519,
-      0.057067371904850006,
-      0.05728171765804291
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "EICHERMOT",
-    "dir_acc": 51.39,
-    "corr": -0.032,
-    "avg_conf": 13.9,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "EICHERMOT",
-    "dir_acc": 51.39,
-    "corr": 0.008,
-    "avg_conf": 18.8,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "GRASIM",
-    "dir_acc": 49.37,
-    "corr": -0.005,
-    "avg_conf": 14.5,
-    "n": 395,
-    "gate_means": [
-      0.9107137322425842,
-      0.03632143884897232,
-      0.05296480283141136
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "GRASIM",
-    "dir_acc": 49.11,
-    "corr": -0.148,
-    "avg_conf": 12.5,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "GRASIM",
-    "dir_acc": 49.37,
-    "corr": -0.032,
     "avg_conf": 13.5,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "ICICIBANK",
-    "dir_acc": 46.58,
-    "corr": -0.016,
-    "avg_conf": 3.7,
-    "n": 395,
+    "n": 371,
     "gate_means": [
-      0.878641664981842,
-      0.09241721034049988,
-      0.02894154004752636
+      0.7642317414283752,
+      0.1536162793636322,
+      0.08215176314115524
     ]
   },
   {
     "variant": "FusionB_MLP",
-    "symbol": "ICICIBANK",
-    "dir_acc": 47.85,
-    "corr": -0.029,
-    "avg_conf": 6.5,
-    "n": 395,
+    "symbol": "ADANIPORTS",
+    "dir_acc": 46.9,
+    "corr": -0.021,
+    "avg_conf": 14.2,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionC_Transformer",
-    "symbol": "ICICIBANK",
-    "dir_acc": 47.09,
-    "corr": 0.007,
-    "avg_conf": 4.7,
-    "n": 395,
+    "symbol": "ADANIPORTS",
+    "dir_acc": 46.09,
+    "corr": -0.034,
+    "avg_conf": 20.9,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionA_Gated",
-    "symbol": "INDUSINDBK",
-    "dir_acc": 49.87,
-    "corr": -0.046,
-    "avg_conf": 9.4,
-    "n": 383,
+    "symbol": "APOLLOHOSP",
+    "dir_acc": 50.67,
+    "corr": -0.043,
+    "avg_conf": 9.9,
+    "n": 371,
     "gate_means": [
-      0.8632072806358337,
-      0.10805048048496246,
-      0.028742678463459015
+      0.8961432576179504,
+      0.03361877053976059,
+      0.07023851573467255
     ]
   },
   {
     "variant": "FusionB_MLP",
-    "symbol": "INDUSINDBK",
-    "dir_acc": 46.74,
-    "corr": 0.02,
-    "avg_conf": 1.4,
-    "n": 383,
+    "symbol": "APOLLOHOSP",
+    "dir_acc": 50.13,
+    "corr": 0.0,
+    "avg_conf": 9.7,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionC_Transformer",
-    "symbol": "INDUSINDBK",
-    "dir_acc": 50.65,
-    "corr": -0.014,
-    "avg_conf": 7.2,
-    "n": 383,
+    "symbol": "APOLLOHOSP",
+    "dir_acc": 48.79,
+    "corr": -0.034,
+    "avg_conf": 9.0,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionA_Gated",
-    "symbol": "JSWSTEEL",
-    "dir_acc": 48.83,
-    "corr": 0.008,
-    "avg_conf": 1.3,
-    "n": 383,
+    "symbol": "ASIANPAINT",
+    "dir_acc": 47.44,
+    "corr": 0.027,
+    "avg_conf": 18.2,
+    "n": 371,
     "gate_means": [
-      0.7914012670516968,
-      0.10568835586309433,
-      0.10291042178869247
+      0.7631939053535461,
+      0.1951780468225479,
+      0.041628457605838776
     ]
   },
   {
     "variant": "FusionB_MLP",
-    "symbol": "JSWSTEEL",
-    "dir_acc": 47.78,
-    "corr": 0.032,
-    "avg_conf": 4.1,
-    "n": 383,
+    "symbol": "ASIANPAINT",
+    "dir_acc": 48.25,
+    "corr": 0.058,
+    "avg_conf": 12.1,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionC_Transformer",
-    "symbol": "JSWSTEEL",
-    "dir_acc": 48.83,
-    "corr": -0.024,
-    "avg_conf": 1.0,
-    "n": 383,
+    "symbol": "ASIANPAINT",
+    "dir_acc": 46.63,
+    "corr": 0.069,
+    "avg_conf": 14.6,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionA_Gated",
-    "symbol": "LT",
-    "dir_acc": 47.85,
-    "corr": -0.074,
-    "avg_conf": 17.6,
-    "n": 395,
+    "symbol": "BAJAJ-AUTO",
+    "dir_acc": 49.33,
+    "corr": 0.033,
+    "avg_conf": 11.2,
+    "n": 371,
     "gate_means": [
-      0.8398981690406799,
-      0.11204107105731964,
-      0.04806103929877281
+      0.7834340929985046,
+      0.14347544312477112,
+      0.07309017330408096
     ]
   },
   {
     "variant": "FusionB_MLP",
-    "symbol": "LT",
-    "dir_acc": 47.85,
-    "corr": -0.023,
-    "avg_conf": 7.5,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "LT",
-    "dir_acc": 47.85,
-    "corr": 0.01,
-    "avg_conf": 19.6,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "NESTLEIND",
-    "dir_acc": 49.35,
-    "corr": 0.094,
-    "avg_conf": 14.0,
-    "n": 383,
-    "gate_means": [
-      0.7926259636878967,
-      0.0458199717104435,
-      0.1615539789199829
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "NESTLEIND",
-    "dir_acc": 49.09,
-    "corr": 0.041,
-    "avg_conf": 2.1,
-    "n": 383,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "NESTLEIND",
-    "dir_acc": 49.35,
-    "corr": -0.115,
-    "avg_conf": 8.4,
-    "n": 383,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "SUNPHARMA",
-    "dir_acc": 51.9,
-    "corr": 0.009,
-    "avg_conf": 3.8,
-    "n": 395,
-    "gate_means": [
-      0.935145378112793,
-      0.025440437719225883,
-      0.03941374644637108
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "SUNPHARMA",
-    "dir_acc": 47.09,
-    "corr": -0.013,
-    "avg_conf": 2.0,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "SUNPHARMA",
-    "dir_acc": 51.9,
-    "corr": -0.08,
-    "avg_conf": 6.3,
-    "n": 395,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionA_Gated",
-    "symbol": "TATASTEEL",
-    "dir_acc": 47.52,
-    "corr": -0.013,
-    "avg_conf": 5.1,
-    "n": 383,
-    "gate_means": [
-      0.7217165231704712,
-      0.18762288987636566,
-      0.0906604751944542
-    ]
-  },
-  {
-    "variant": "FusionB_MLP",
-    "symbol": "TATASTEEL",
-    "dir_acc": 46.74,
-    "corr": 0.005,
-    "avg_conf": 6.7,
-    "n": 383,
-    "gate_means": null
-  },
-  {
-    "variant": "FusionC_Transformer",
-    "symbol": "TATASTEEL",
-    "dir_acc": 51.96,
-    "corr": -0.036,
+    "symbol": "BAJAJ-AUTO",
+    "dir_acc": 52.56,
+    "corr": -0.007,
     "avg_conf": 3.1,
-    "n": 383,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "BAJAJ-AUTO",
+    "dir_acc": 49.33,
+    "corr": -0.022,
+    "avg_conf": 10.1,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "BAJFINANCE",
+    "dir_acc": 52.89,
+    "corr": 0.005,
+    "avg_conf": 7.6,
+    "n": 363,
+    "gate_means": [
+      0.9122671484947205,
+      0.059913598001003265,
+      0.027819275856018066
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "BAJFINANCE",
+    "dir_acc": 52.07,
+    "corr": 0.041,
+    "avg_conf": 6.9,
+    "n": 363,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "BAJFINANCE",
+    "dir_acc": 50.96,
+    "corr": 0.067,
+    "avg_conf": 9.0,
+    "n": 363,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "BHARTIARTL",
+    "dir_acc": 50.67,
+    "corr": 0.015,
+    "avg_conf": 4.0,
+    "n": 371,
+    "gate_means": [
+      0.6952120661735535,
+      0.19621703028678894,
+      0.10857070237398148
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "BHARTIARTL",
+    "dir_acc": 52.02,
+    "corr": -0.014,
+    "avg_conf": 7.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "BHARTIARTL",
+    "dir_acc": 50.67,
+    "corr": 0.07,
+    "avg_conf": 10.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "CIPLA",
+    "dir_acc": 52.83,
+    "corr": 0.081,
+    "avg_conf": 5.6,
+    "n": 371,
+    "gate_means": [
+      0.9590921401977539,
+      0.025272438302636147,
+      0.015636304393410683
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "CIPLA",
+    "dir_acc": 53.1,
+    "corr": 0.015,
+    "avg_conf": 6.4,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "CIPLA",
+    "dir_acc": 53.91,
+    "corr": 0.077,
+    "avg_conf": 6.8,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "DIVISLAB",
+    "dir_acc": 49.87,
+    "corr": 0.079,
+    "avg_conf": 9.9,
+    "n": 371,
+    "gate_means": [
+      0.9669530987739563,
+      0.015233424492180347,
+      0.017813783138990402
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "DIVISLAB",
+    "dir_acc": 50.67,
+    "corr": 0.014,
+    "avg_conf": 1.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "DIVISLAB",
+    "dir_acc": 49.87,
+    "corr": 0.078,
+    "avg_conf": 3.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "DRREDDY",
+    "dir_acc": 50.4,
+    "corr": 0.029,
+    "avg_conf": 11.8,
+    "n": 371,
+    "gate_means": [
+      0.7785407900810242,
+      0.15220975875854492,
+      0.06924980133771896
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "DRREDDY",
+    "dir_acc": 50.67,
+    "corr": -0.043,
+    "avg_conf": 13.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "DRREDDY",
+    "dir_acc": 47.17,
+    "corr": -0.001,
+    "avg_conf": 8.7,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "EICHERMOT",
+    "dir_acc": 50.94,
+    "corr": -0.041,
+    "avg_conf": 14.8,
+    "n": 371,
+    "gate_means": [
+      0.8524491786956787,
+      0.08331317454576492,
+      0.06423775106668472
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "EICHERMOT",
+    "dir_acc": 52.56,
+    "corr": 0.057,
+    "avg_conf": 1.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "EICHERMOT",
+    "dir_acc": 49.87,
+    "corr": -0.035,
+    "avg_conf": 8.1,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "GRASIM",
+    "dir_acc": 52.83,
+    "corr": 0.023,
+    "avg_conf": 12.9,
+    "n": 371,
+    "gate_means": [
+      0.9376189708709717,
+      0.03957820683717728,
+      0.022802507504820824
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "GRASIM",
+    "dir_acc": 52.83,
+    "corr": -0.02,
+    "avg_conf": 15.4,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "GRASIM",
+    "dir_acc": 52.29,
+    "corr": 0.105,
+    "avg_conf": 10.8,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "ICICIBANK",
+    "dir_acc": 52.56,
+    "corr": -0.105,
+    "avg_conf": 8.0,
+    "n": 371,
+    "gate_means": [
+      0.3264074921607971,
+      0.5574409365653992,
+      0.11615192890167236
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "ICICIBANK",
+    "dir_acc": 50.67,
+    "corr": 0.022,
+    "avg_conf": 3.0,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "ICICIBANK",
+    "dir_acc": 53.64,
+    "corr": -0.01,
+    "avg_conf": 6.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "INDUSINDBK",
+    "dir_acc": 46.63,
+    "corr": -0.088,
+    "avg_conf": 10.8,
+    "n": 371,
+    "gate_means": [
+      0.7522252202033997,
+      0.13626450300216675,
+      0.1115105003118515
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "INDUSINDBK",
+    "dir_acc": 52.83,
+    "corr": 0.057,
+    "avg_conf": 3.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "INDUSINDBK",
+    "dir_acc": 46.9,
+    "corr": -0.029,
+    "avg_conf": 11.7,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "JSWSTEEL",
+    "dir_acc": 49.33,
+    "corr": 0.022,
+    "avg_conf": 7.0,
+    "n": 371,
+    "gate_means": [
+      0.9089379906654358,
+      0.03063501976430416,
+      0.06042762100696564
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "JSWSTEEL",
+    "dir_acc": 52.83,
+    "corr": 0.067,
+    "avg_conf": 3.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "JSWSTEEL",
+    "dir_acc": 52.56,
+    "corr": 0.115,
+    "avg_conf": 9.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "NESTLEIND",
+    "dir_acc": 52.56,
+    "corr": -0.029,
+    "avg_conf": 7.0,
+    "n": 371,
+    "gate_means": [
+      0.6806408762931824,
+      0.17754283547401428,
+      0.14181609451770782
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "NESTLEIND",
+    "dir_acc": 53.1,
+    "corr": -0.019,
+    "avg_conf": 1.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "NESTLEIND",
+    "dir_acc": 52.56,
+    "corr": 0.002,
+    "avg_conf": 3.7,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "SUNPHARMA",
+    "dir_acc": 49.87,
+    "corr": 0.033,
+    "avg_conf": 7.2,
+    "n": 371,
+    "gate_means": [
+      0.9643169045448303,
+      0.016456224024295807,
+      0.019226623699069023
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "SUNPHARMA",
+    "dir_acc": 50.67,
+    "corr": -0.053,
+    "avg_conf": 10.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "SUNPHARMA",
+    "dir_acc": 50.94,
+    "corr": -0.085,
+    "avg_conf": 8.6,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "TATASTEEL",
+    "dir_acc": 51.48,
+    "corr": -0.015,
+    "avg_conf": 5.3,
+    "n": 371,
+    "gate_means": [
+      0.8651566505432129,
+      0.09034299105405807,
+      0.04450041800737381
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "TATASTEEL",
+    "dir_acc": 48.52,
+    "corr": -0.029,
+    "avg_conf": 7.9,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "TATASTEEL",
+    "dir_acc": 48.25,
+    "corr": -0.105,
+    "avg_conf": 6.3,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionA_Gated",
     "symbol": "TITAN",
-    "dir_acc": 50.63,
-    "corr": -0.026,
-    "avg_conf": 4.6,
-    "n": 395,
+    "dir_acc": 52.83,
+    "corr": -0.018,
+    "avg_conf": 10.7,
+    "n": 371,
     "gate_means": [
-      0.8019368052482605,
-      0.13232958316802979,
-      0.06573350727558136
+      0.9402647614479065,
+      0.015906063839793205,
+      0.043829165399074554
     ]
   },
   {
     "variant": "FusionB_MLP",
     "symbol": "TITAN",
-    "dir_acc": 53.42,
-    "corr": -0.044,
-    "avg_conf": 5.6,
-    "n": 395,
+    "dir_acc": 53.37,
+    "corr": -0.005,
+    "avg_conf": 1.1,
+    "n": 371,
     "gate_means": null
   },
   {
     "variant": "FusionC_Transformer",
     "symbol": "TITAN",
-    "dir_acc": 51.14,
-    "corr": 0.014,
-    "avg_conf": 3.6,
-    "n": 395,
+    "dir_acc": 52.83,
+    "corr": -0.021,
+    "avg_conf": 10.5,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionA_Gated",
+    "symbol": "ULTRACEMCO",
+    "dir_acc": 45.82,
+    "corr": -0.01,
+    "avg_conf": 12.3,
+    "n": 371,
+    "gate_means": [
+      0.8290416598320007,
+      0.10249576717615128,
+      0.06846261024475098
+    ]
+  },
+  {
+    "variant": "FusionB_MLP",
+    "symbol": "ULTRACEMCO",
+    "dir_acc": 44.47,
+    "corr": -0.079,
+    "avg_conf": 7.4,
+    "n": 371,
+    "gate_means": null
+  },
+  {
+    "variant": "FusionC_Transformer",
+    "symbol": "ULTRACEMCO",
+    "dir_acc": 46.36,
+    "corr": 0.053,
+    "avg_conf": 11.1,
+    "n": 371,
     "gate_means": null
   }
 ]

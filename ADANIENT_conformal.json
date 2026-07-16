@@ -2,7 +2,7 @@
   "symbol": "ADANIENT",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.03456870944896325,
-  "empirical_coverage": 0.8886075949367088,
-  "n_calibration": 394
+  "half_width": 0.04999703064440395,
+  "empirical_coverage": 0.967654986522911,
+  "n_calibration": 371
 }

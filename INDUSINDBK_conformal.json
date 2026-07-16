@@ -2,7 +2,7 @@
   "symbol": "INDUSINDBK",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.023810127560370275,
-  "empirical_coverage": 0.814621409921671,
-  "n_calibration": 383
+  "half_width": 0.027165799564870217,
+  "empirical_coverage": 0.9056603773584906,
+  "n_calibration": 371
 }

@@ -2,7 +2,7 @@
   "symbol": "EICHERMOT",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.025548587472835168,
-  "empirical_coverage": 0.8911392405063291,
-  "n_calibration": 394
+  "half_width": 0.024824393406068537,
+  "empirical_coverage": 0.9191374663072777,
+  "n_calibration": 371
 }

@@ -1,11 +1,11 @@
 {
   "symbol": "BAJFINANCE",
-  "mu0": -0.0009500739474937797,
-  "sigma0": 0.017682388325376504,
+  "mu0": 0.006130625368753927,
+  "sigma0": 0.1210606385831589,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 5.771248444954841,
-  "max_s_neg_insample": 4.585127836270946,
-  "insample_drift_flags": 4,
-  "n_insample": 395
+  "max_s_pos_insample": 18.363265106234387,
+  "max_s_neg_insample": 0.20081928216963507,
+  "insample_drift_flags": 24,
+  "n_insample": 363
 }

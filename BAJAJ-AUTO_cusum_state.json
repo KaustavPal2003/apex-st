@@ -1,11 +1,11 @@
 {
   "symbol": "BAJAJ-AUTO",
-  "mu0": 0.0004658288684805496,
-  "sigma0": 0.014858923221001212,
+  "mu0": 0.0002988494402428366,
+  "sigma0": 0.015945886305725153,
   "k": 0.5,
   "h": 5.0,
-  "max_s_pos_insample": 7.567901348823657,
-  "max_s_neg_insample": 6.489071840828738,
-  "insample_drift_flags": 7,
-  "n_insample": 395
+  "max_s_pos_insample": 8.61191338643121,
+  "max_s_neg_insample": 3.8217798862058032,
+  "insample_drift_flags": 11,
+  "n_insample": 371
 }

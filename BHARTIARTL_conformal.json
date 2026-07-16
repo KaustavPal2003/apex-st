@@ -2,7 +2,7 @@
   "symbol": "BHARTIARTL",
   "alpha": 0.1,
   "nominal_coverage": 0.9,
-  "half_width": 0.02061739181012369,
-  "empirical_coverage": 0.8911392405063291,
-  "n_calibration": 394
+  "half_width": 0.019062839900306612,
+  "empirical_coverage": 0.8571428571428571,
+  "n_calibration": 371
 }
